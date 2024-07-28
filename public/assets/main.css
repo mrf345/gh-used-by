@@ -1,0 +1,11 @@
+.github-fork-ribbon:before {
+    background-color: #000;
+}
+
+#badge a {
+    max-width: 25%;
+}
+
+#badge img {
+    width: 200px;
+}
