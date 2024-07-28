@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="description" content="Generate Github dependent (used by) badges">
+    <meta name="keywords" content="Github dependent dependents used by used-by badge badges">
+    <title>GitHub dependents badge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="icon" href="https://img.shields.io/badge/_-black?logo=github" sizes="any" type="image/svg+xml">
+  </head>
+  <body>
+    <a class="github-fork-ribbon" href="https://github.com/mrf345/gh-used-by" target="_blank" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <div class="container">
+      <div class="row d-flex text-center mt-5">
+        <h2>Generate GitHub used-by shields.io badge</h2>
+      </div>
+
+      <div id="badge" class="row d-flex justify-content-center mt-5">
+      </div>
+
+      <div class="row mt-5">
+        <div class="form-group">
+          <div class="d-flex justify-content-between mb-2">
+            <label for="url" class="mt-2">URL</label>
+            <button class="btn btn-outline-primary btn-sm" onclick="copyUrl()">Copy</button>
+          </div>
+          <input type="text" class="form-control" id="url" value="">
+        </div>
+        <div class="form-group mt-4">
+          <div class="d-flex justify-content-between mb-2">
+            <label for="html" class="mt-2">HTML</label>
+            <button class="btn btn-outline-primary btn-sm" onclick="copyHtml()">Copy</button>
+          </div>
+          <textarea class="form-control" id="html" rows="3"></textarea>
+        </div>
+      </div>
+
+      <div class="mt-5 mb-3 d-flex justify-content-between">
+        <h5 class="mt-2">Parameters</h5>
+        <button class="btn btn-outline-primary btn-sm" onclick="updateBadgeFromInput()">Update</button>
+      </div>
+      <form id="options">
+        <div class="row border ps-4 pe-2 py-2">
+          <div class="row mb-4 mt-3">
+            <div class="form-group col-md-6">
+              <label for="account" class="mb-1">Account</label>
+              <input type="text" class="form-control" id="account" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="project" class="mb-1">Project</label>
+              <input type="text" class="form-control" id="project" required>
+            </div>
+          </div>
+          <div class="row mb-4 pl-1">
+            <div class="form-group col-md-4">
+              <label for="label" class="mb-1">Label</label>
+              <input type="text" class="form-control" id="label">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="color" class="mb-1">Color</label>
+              <input type="text" class="form-control" id="color">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="logo" class="mb-1">logo</label>
+              <input type="text" class="form-control" id="logo">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/main.js"></script>
+  </body>
+</html>
