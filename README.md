@@ -1,9 +1,9 @@
-<div>
-    <h1 style="display: inline-block; margin-right: 10px;">gh-used-by</h1>
+<h1>
+    gh-used-by
     <a href='https://github.com/mrf345/gh-used-by/actions/workflows/ci.yml'>
         <img src='https://github.com/mrf345/gh-used-by/actions/workflows/ci.yml/badge.svg'>
     </a>
-</div>
+</h1>
 
 Simple serverless wrapper to fetch a GitHub project dependents (Used-by) count, and generate shields.io badge. Do check [the live demo](https://used-by-cc7fc.web.app/)!
 
@@ -33,6 +33,7 @@ Simple serverless wrapper to fetch a GitHub project dependents (Used-by) count, 
     <img src="https://used-by-cc7fc.web.app/badge?account=sveltejs&project=svelte&label=Svelte&color=orange&logo=github" alt="Svelte Badge" />
 </a>
 ```
+
 
 ### Self-hosting
 
