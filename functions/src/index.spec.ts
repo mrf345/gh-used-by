@@ -12,6 +12,8 @@ interface RequestStub {
 interface ResponseStub {
     redirect: jest.Mock;
     sendStatus: jest.Mock;
+    status: jest.Mock;
+    send: jest.Mock;
     set: jest.Mock;
 }
 
@@ -24,6 +26,8 @@ function getReqSub(params: Record<string, any>):RequestStub {
 function getRespSub():ResponseStub {
   return {
     sendStatus: jest.fn(),
+    status: jest.fn(),
+    send: jest.fn(),
     redirect: jest.fn(),
     set: jest.fn(),
   };
@@ -36,8 +40,8 @@ describe("testing getBadge", () => {
 
     await getBadge(req as any, resp as any);
 
-    expect(resp.sendStatus)
-      .toHaveBeenCalledWith(statuscode.HTTP_STATUS_INTERNAL_SERVER_ERROR);
+    expect(resp.status)
+      .toHaveBeenCalledWith(statuscode.HTTP_STATUS_BAD_REQUEST);
   });
 
   test("test missing account query param", async () => {
@@ -46,8 +50,8 @@ describe("testing getBadge", () => {
 
     await getBadge(req as any, resp as any);
 
-    expect(resp.sendStatus)
-      .toHaveBeenCalledWith(statuscode.HTTP_STATUS_INTERNAL_SERVER_ERROR);
+    expect(resp.status)
+      .toHaveBeenCalledWith(statuscode.HTTP_STATUS_BAD_REQUEST);
   });
 
   test("test redirected to shields.io successfully", async () => {
