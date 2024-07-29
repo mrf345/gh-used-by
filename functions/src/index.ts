@@ -1,6 +1,5 @@
 import {constants as statuscode} from "http2";
 import {onRequest} from "firebase-functions/v2/https";
-import * as logger from "firebase-functions/logger";
 import {JSDOM} from "jsdom";
 
 const selector = ".Box-header a svg.octicon";
@@ -18,8 +17,8 @@ export const getBadge = onRequest(async (req, resp) => {
   const logo = req.query["logo"] ?? defaultParams.logo;
 
   if (!account || !project) {
-    logger.warn("missing account or project", {account, project});
-    resp.sendStatus(statuscode.HTTP_STATUS_INTERNAL_SERVER_ERROR);
+    resp.status(statuscode.HTTP_STATUS_BAD_REQUEST);
+    resp.send("missing account or project query params");
     return;
   }
 
