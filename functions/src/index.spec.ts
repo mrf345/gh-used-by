@@ -3,7 +3,7 @@
 import {constants as statuscode} from "http2";
 import {describe, jest, test, expect} from "@jest/globals";
 
-import {getBadge, defaultParams} from "./index";
+import {getBadge, defaultParams, getShieldsUrl} from "./index";
 
 interface RequestStub {
     query: Record<string, any>;
@@ -72,7 +72,7 @@ describe("testing getBadge", () => {
     expect(resp.set)
       .toHaveBeenCalledWith(expect.anything(), expect.anything());
     expect(resp.redirect)
-      .toHaveBeenCalledWith(`https://img.shields.io/badge/${label}-0-${color}?logo=${logo}`);
+      .toHaveBeenCalledWith(getShieldsUrl(label, "0", color, logo));
   });
 
   test("test redirected to shields.io with defaults successfully", async () => {
@@ -87,6 +87,6 @@ describe("testing getBadge", () => {
     expect(resp.set)
       .toHaveBeenCalledWith(expect.anything(), expect.anything());
     expect(resp.redirect)
-      .toHaveBeenCalledWith(`https://img.shields.io/badge/${label}-0-${color}?logo=${logo}`);
+      .toHaveBeenCalledWith(getShieldsUrl(label, "0", color, logo));
   });
 });
